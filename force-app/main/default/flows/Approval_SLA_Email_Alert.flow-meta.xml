@@ -79,8 +79,8 @@
                 <targetReference>Case_Status</targetReference>
             </connector>
             <label>Send an Escalation Email after 2 Days if case is not approved</label>
-            <offsetNumber>1</offsetNumber>
-            <offsetUnit>Minutes</offsetUnit>
+            <offsetNumber>2</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
             <timeSource>RecordTriggerEvent</timeSource>
         </scheduledPaths>
         <triggerType>RecordAfterSave</triggerType>
