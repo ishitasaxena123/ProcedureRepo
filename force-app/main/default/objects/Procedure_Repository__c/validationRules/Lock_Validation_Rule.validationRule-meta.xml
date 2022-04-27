@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lock_Validation_Rule</fullName>
+    <active>true</active>
+    <description>Once Procedure Request (Case) is in waiting for Approval or In Legal Review or Approved Status no one can edit the procedure.</description>
+    <errorConditionFormula>if( 
+      OR (
+           ISPICKVAL(Procedure_Request__r.Status, &apos;In Legal Review&apos;),
+           ISPICKVAL(Procedure_Request__r.Status, &apos;Waiting for Approval&apos;)
+          ),
+      true,
+      false  
+   )</errorConditionFormula>
+    <errorMessage>Procedure cannot be updated as this is pending for Legal Team&apos;s Approval or  already Approved by Legal Team.</errorMessage>
+</ValidationRule>

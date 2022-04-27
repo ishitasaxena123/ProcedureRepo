@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lock_The_Record_After_Approval</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL( Procedure_Status__c ,&quot;Approved&quot;) &amp;&amp; ISPICKVAL(PRIORVALUE(Procedure_Status__c ), &quot;Approved&quot;)</errorConditionFormula>
+    <errorMessage>Procedure cannot be modified once approved. Please create a new request for modification.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lock_After_Approved</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL(PRIORVALUE(Procedure_Status__c ), &quot;Approved&quot;) &amp;&amp;
+NOT(ISPICKVAL(Procedure_Status__c , &quot;Approved&quot;))</errorConditionFormula>
+    <errorMessage>Change Status is not allowed for Approved Procedure.</errorMessage>
+</ValidationRule>
